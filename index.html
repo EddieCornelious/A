@@ -2,9 +2,11 @@
 <head>
 
   <script>
-
-    document.addEventListener("DOMContentLoaded", e=>{
+    function submitCode(){
       document.getElementById("A").submit();
+    }
+    document.addEventListener("DOMContentLoaded", e=>{
+      
       window.addEventListener("message",e=>{
         
         console.log(e.data, e.origin.toString());
@@ -16,7 +18,7 @@
 <body>
    <form target="code_runner" action="https://coding-jxl6.onrender.com/execute" method="post">
     <input type="hidden" name="submit_button" value="function add(a,b){return a+b};" />
-    <input type="submit">
+    <input onclick = "submitCode();" type="submit">
 </form>
   <iframe id="A" name="code_runner" sandbox="allow-scripts allow-forms" src="https://coding-jxl6.onrender.com"/>
 </body>
