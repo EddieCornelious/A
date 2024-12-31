@@ -3,7 +3,7 @@
 
   <script>
     function submitCode(){
-      document.getElementById("A").submit();
+      document.forms["iframe_form"].submit();
     }
     document.addEventListener("DOMContentLoaded", e=>{
       
@@ -16,7 +16,7 @@
   </script>
 </head>
 <body>
-   <form target="code_runner" action="https://coding-jxl6.onrender.com/execute" method="post">
+   <form name = "iframe_form" target="code_runner" action="https://coding-jxl6.onrender.com/execute" method="post">
     <input type="hidden" name="submit_button" value="function add(a,b){return a+b};" />
     <input onclick = "submitCode();" type="submit">
 </form>
