@@ -4,7 +4,9 @@
   <script>
 
     document.addEventListener("DOMContentLoaded", e=>{
+      document.getElementById("A").submit();
       window.addEventListener("message",e=>{
+        
         console.log(e.data, e.origin.toString());
         
       })
@@ -12,7 +14,11 @@
   </script>
 </head>
 <body>
-  <iframe sandbox="allow-scripts" src="https://coding-jxl6.onrender.com/execute"/>
+   <form target="code" action="https://coding-jxl6.onrender.com/execute" method="post">
+    <input type="hidden" name="code" value="function(a,b){return a+b};" />
+    <input type="submit">
+</form>
+  <iframe id="A" name="code" sandbox="allow-scripts allow-forms" src="https://coding-jxl6.onrender.com/execute"/>
 </body>
   
 </html>
