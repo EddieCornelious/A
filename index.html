@@ -8,8 +8,9 @@
     document.addEventListener("DOMContentLoaded", e=>{
       
       window.addEventListener("message",e=>{
+        if(e.origin!=="https://coding-jxl6.onrender.com") return;
         
-        console.log(e.data, e.origin.toString());
+        console.log(e, e.data, e.origin.toString());
         
       })
     })
