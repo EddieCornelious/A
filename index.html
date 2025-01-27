@@ -2,7 +2,8 @@
 <head>
 
   <script>
-    function submitCode(){
+    function submitCode(type){
+      if(type===2) return  document.forms["view_form"].submit();
       document.forms["iframe_form"].submit();
     }
     document.addEventListener("DOMContentLoaded", e=>{
@@ -19,9 +20,16 @@
 <body>
    <form name = "iframe_form" target="code_runner" action="https://coding-jxl6.onrender.com/execute" method="post">
     <input name="code" value="function add(a,b){return a+b};" />
-    <button onclick = "submitCode();">Run Code</button>
+    <button onclick = "submitCode(1);">Run Code</button>
+</form>
+  <form name = "view_form" target="code_viewer" action="https://coding-jxl6.onrender.com/view" method="post">
+    <input name="html" value="" />
+    <input name="css" value="" />
+    <input name="js" value="" />
+    <button onclick = "submitCode(2);">View Code</button>
 </form>
   <iframe id="A" name="code_runner" sandbox="allow-same-origin allow-scripts allow-forms" src="https://coding-jxl6.onrender.com"/>
+  <iframe id="B" name="code_viewer" sandbox="allow-same-origin allow-scripts allow-forms" src="https://coding-jxl6.onrender.com"/>
 </body>
   
 </html>
